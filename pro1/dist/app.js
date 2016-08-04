@@ -24771,7 +24771,7 @@ webpackJsonp([0],[
 	            null,
 	            _react2.default.createElement(
 	                "label",
-	                { "for": "" },
+	                null,
 	                this.props.type
 	            ),
 	            _react2.default.createElement("input", { className: "form-control", style: { maxWidth: 200, margin: 'auto' }, type: this.props.type, ref: "inp" })
@@ -24787,8 +24787,8 @@ webpackJsonp([0],[
 	        };
 	    },
 	    submitForm: function submitForm(event) {
-	        var name = event.target.elements[0].value,
-	            pwd = event.target.elements[1].value,
+	        var name = this.refs.form.elements[0].value,
+	            pwd = this.refs.form.elements[1].value,
 	            path = "/home/" + name + "/" + pwd;
 	        if ("123" !== pwd) {
 	            return;
@@ -24815,7 +24815,7 @@ webpackJsonp([0],[
 	            )
 	        ) : _react2.default.createElement(
 	            "form",
-	            { onSubmit: this.submitForm },
+	            { ref: "form" },
 	            _react2.default.createElement(
 	                "div",
 	                null,
@@ -24825,8 +24825,8 @@ webpackJsonp([0],[
 	            _react2.default.createElement(Input, { type: "password", hasBt: "true", placeholder: "pwd" }),
 	            _react2.default.createElement("p", null),
 	            _react2.default.createElement(
-	                "button",
-	                { className: "btn btn-default", type: "submit" },
+	                "div",
+	                { className: "btn btn-default", onClick: this.submitForm },
 	                "点击我登录"
 	            ),
 	            "  ",
@@ -30371,7 +30371,8 @@ webpackJsonp([0],[
 	var loggerMiddleware = (0, _reduxLogger2.default)();
 
 	// 创建一个中间件集合
-	var middleware = [_reduxThunk2.default, loggerMiddleware];
+	// const middleware = [thunk, loggerMiddleware]
+	var middleware = [_reduxThunk2.default];
 
 	// 利用compose增强store，这个 store 与 applyMiddleware 和 redux-devtools 一起使用
 	var finalCreateStore = (0, _redux.compose)(_redux.applyMiddleware.apply(undefined, middleware), _DevTools2.default.instrument())(_redux.createStore);
