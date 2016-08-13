@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pP.js演示demo</title>
+    <link rel="stylesheet" type="text/css" href="css/pP.css">
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="js/pP.js"></script>
+</head>
+<body>
+<div class="click">点击这里</div>
+<script>
+    $(".click").on("click", function () {
+        new Pp({
+            id: "picc",
+            zIndex: "10000",
+            picList: [{currIndex: 1, pictureUrl: "https://placem.at/people?w=640&h=480"}, {
+                currIndex: 2,
+                pictureUrl: "https://placem.at/people?w=220&h=990"
+            }, {currIndex: 3, pictureUrl: "https://placem.at/people?w=640&h=660"},{currIndex: 4, pictureUrl: "https://placem.at/people?w=140&h=111"}],
+            currIndex: 1
+        });
+        console.log(123)
+    })
+</script>
+</body>
+</html>

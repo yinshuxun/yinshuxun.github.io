@@ -1,0 +1,76 @@
+.picZoom {
+  z-index: 99990;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .content {
+    background: white;
+    border: 10px solid white;
+    overflow: hidden;
+    &.loading {
+      background: url("../image/loading.gif") center no-repeat;
+      background-color: white;
+    }
+  }
+
+  table {
+    width: 100%;
+    margin-top: 10px;
+    tr {
+      td:first-child {
+        width: 60px;
+        font-size: 12px;
+        height: 16px;
+        line-height: 16px;
+        white-space: nowrap;
+      }
+      td:last-child {
+        white-space: nowrap;
+        font-size: 12px;
+        height: 16px;
+        line-height: 16px;
+      }
+    }
+  }
+
+  .previous {
+    transform: translateY(-50%);
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    border-radius: 0 4px 4px 0;
+    &:after {
+      content: "<";
+      font-size: 100px;
+      color: white;
+    }
+  }
+  .next {
+    transform: translateY(-50%);
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    border-radius: 4px 0 0 4px;
+    &:after {
+      content: ">";
+      font-size: 100px;
+      color: white;
+    }
+  }
+  .content {
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+    top: 50%;
+    position: absolute;
+  }
+
+}
