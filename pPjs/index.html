@@ -8,19 +8,23 @@
     <script type="text/javascript" src="js/pP.js"></script>
 </head>
 <body>
-<div class="click">点击这里</div>
+<div class="click">点击这里生成随机图片集</div>
 <script>
     $(".click").on("click", function () {
+        var arr = [];
+        for (var index = 1; index < 10; index++) {
+            arr.push({
+                currIndex: index,
+                pictureUrl: "https://placem.at/people?w=" + parseInt(Math.random() * 1000) + "&h=" + parseInt(Math.random() * 1000)
+            })
+        }
+        console.log(arr)
         new Pp({
             id: "picc",
             zIndex: "10000",
-            picList: [{currIndex: 1, pictureUrl: "https://placem.at/people?w=640&h=480"}, {
-                currIndex: 2,
-                pictureUrl: "https://placem.at/people?w=220&h=990"
-            }, {currIndex: 3, pictureUrl: "https://placem.at/people?w=640&h=660"},{currIndex: 4, pictureUrl: "https://placem.at/people?w=140&h=111"}],
+            picList: arr,
             currIndex: 1
         });
-        console.log(123)
     })
 </script>
 </body>
