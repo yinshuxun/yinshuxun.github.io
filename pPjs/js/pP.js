@@ -1,6 +1,6 @@
 /**
  * @author shuxun.yin
- * picture preview 
+ * picture preview
  */
 +function ($, global) {
     var Pp = function (opts) {
@@ -196,7 +196,7 @@
                 newW = winW * 0.2;
                 newH = newW / width * height;
             }
-            $(".picZoom .content").css({width: newW + 20, height: newH + 95});
+            $(".picZoom .content").css({width: newW, height: newH + 95});
             $(".picZoom img").css({width: newW, height: newH});
         },
         next: function () {
